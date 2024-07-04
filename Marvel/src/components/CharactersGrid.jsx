@@ -11,10 +11,12 @@ export const CharactersGrid = () => {
     });
   }, []);
   return (
-    <ul>
-      {characters.map((character) => (
-        <CharactersCard key={character.etag} charactersMap={character} />
-      ))}
-    </ul>
+    <div className="container-fluid my-3">
+      <div className="row d-flex justify-content-center">
+        {characters.map((character) => (
+          <CharactersCard key={character.etag} charactersMap={character} />
+        ))}
+      </div>
+    </div>
   );
 };

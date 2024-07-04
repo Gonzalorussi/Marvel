@@ -1,19 +1,23 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #cf1928;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(39, 39, 39);
 }
 
-a{
-    text-decoration: none;
-
+.dropdown-item:active {
+  background-color: #cf1928 !important;
 }
 
-
-
-.hero{
-    display: flex;
-    justify-content: center;
+.my-efect-card:hover {
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.my-efect-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(219, 35, 35, 0.2), 0 6px 20px 0 rgba(219, 35, 35, 0.19);
+  transform: translateY(-5px) translateX(-2px);
+}
+
+.text-shadow {
+  text-shadow: 3px 3px 5px rgba(219, 35, 35, 0.7);
+}
