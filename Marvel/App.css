@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #cf1928;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+
+
+.hero{
+    display: flex;
+    justify-content: center;
+}
+
