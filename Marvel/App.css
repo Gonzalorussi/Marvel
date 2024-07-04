@@ -1,19 +1,10 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #cf1928;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(39, 39, 39);
 }
 
-a{
-    text-decoration: none;
-
+.dropdown-item:active {
+  background-color: #cf1928 !important;
 }
-
-
-
-.hero{
-    display: flex;
-    justify-content: center;
-}
-

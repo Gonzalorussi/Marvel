@@ -1,39 +1,29 @@
-import {BrowserRouter, Routes, Route,Link} from "react-router-dom"
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
 import { LandingPage } from "./pages/Landingpage"
 import {CharacterInfo} from "./pages/CharacterInfo"
-import "../App.css"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import 'bootstrap/dist/css/bootstrap.min.css'
+import '../App.css'
+import * as bootstrap from 'bootstrap'
 function App() {
   
   return (
     <>     
       <BrowserRouter>
-      
-        <header className="header">
-          <nav className="header_nav">
-            <ul className="nav_menu">
-            <Link to="/">
-              <li className="menu_item">Home</li>
-            </Link >
-            <Link to="/conocenos">  
-              <li className="menu_item">Quiénes Somos</li>
-            </Link>
-            <Link to="/login">
-              <li className="menu_item">Log in</li>
-            </Link>
-            </ul>
-          </nav>
-        </header>
-
-        <section className="hero">
-          <img className="hero_img" src="./src/assets/marvelhero.png" alt="" />
+        <section className="container-fluid m-0 p-0">
+          <img style={{width: '100%'}} className="img-fluid" src="./src/assets/images/banner.png" alt="" />
         </section>
-        
+        <Header/>
+
         <Routes>
           <Route path="/" element ={<LandingPage/>}/>
           <Route path="/conocenos" element ="Renderizar page conocenos"/>
           <Route path="/characters" element ="Renderizar componente CharactersGrid"/>
           <Route path="/character/:characterid" element={<CharacterInfo/>}/>
         </Routes>
+
+        <Footer/>
       </BrowserRouter>
     </>
   )
