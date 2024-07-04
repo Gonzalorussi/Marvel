@@ -8,12 +8,14 @@ export const CharactersCard = ({charactersMap})=>{
    
     return(
         <>
-        <li>
-            <Link to={`/character/${charactersMap.id}`}>
-           <img src={imgUrl} alt={charactersMap.name} />
-            <small>{charactersMap.name}</small>
-            </Link>
-        </li>
+            <div className="col d-flex mb-3">
+                <Link to={`/character/${charactersMap.id}`} className="card text-bg-dark" style={{width: '18rem'}}>
+                    <img src={imgUrl} className="card-img" alt={charactersMap.name}/>
+                    <div className="card-img-overlay">
+                        <h5 className="card-title">{charactersMap.name}</h5>
+                    </div>
+                </Link>
+            </div>
         </>
     )
     

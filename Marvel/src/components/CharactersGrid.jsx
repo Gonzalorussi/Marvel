@@ -15,15 +15,12 @@ export const CharactersGrid=()=>{
         })
     },[])
     return (
-        <div className="container-fluid my-3">            
-            <ul>
+        <div className="container-fluid my-3">
+            <div className="row">
                 {characters.map((character)=>(
                     <CharactersCard key={character.etag} charactersMap={character}/>
-                ))
-                
-                
-                }
-            </ul>
+                ))}
+            </div>
         </div>
     )
 }
