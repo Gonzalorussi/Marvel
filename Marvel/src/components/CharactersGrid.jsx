@@ -16,7 +16,7 @@ export const CharactersGrid=()=>{
     },[])
     return (
         <div className="container-fluid my-3">
-            <div className="row">
+            <div className="row d-flex justify-content-center">
                 {characters.map((character)=>(
                     <CharactersCard key={character.etag} charactersMap={character}/>
                 ))}
