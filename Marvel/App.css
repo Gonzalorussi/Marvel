@@ -9,13 +9,28 @@ body {
   background-color: #cf1928 !important;
 }
 
-.my-efect-card:hover {
-  transition: transform 0.3s, box-shadow 0.3s;
+.my-efect-card {
+  transition: transform 0.3s;
 }
 
 .my-efect-card:hover {
-  box-shadow: 0 4px 8px 0 rgba(219, 35, 35, 0.2), 0 6px 20px 0 rgba(219, 35, 35, 0.19);
+  animation: neon-flicker 0.7s infinite alternate;
   transform: translateY(-5px) translateX(-2px);
+}
+
+@keyframes neon-flicker {
+  0% {
+    box-shadow: 0 4px 8px 0 rgba(219, 35, 35, 0.1), 0 6px 20px 0 rgba(219, 35, 35, 0.1);
+  }
+  25% {
+    box-shadow: 0 4px 8px 0 rgba(219, 35, 35, 0.3), 0 6px 20px 0 rgba(219, 35, 35, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 8px 0 rgba(219, 35, 35, 0.5), 0 6px 20px 0 rgba(219, 35, 35, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 8px 0 rgba(219, 35, 35, 0.7), 0 6px 20px 0 rgba(219, 35, 35, 0.7);
+  }
 }
 
 .text-shadow {
