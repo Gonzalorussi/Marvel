@@ -1,4 +1,5 @@
 import brand from "../assets/images/marvel-logo.png"
+import { Link } from "react-router-dom"
 
 function Navbar() {
 
@@ -16,7 +17,9 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                <Link to={`/`} className="nav-link active" aria-current="page">
+                  Home
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Quiénes Somos</a>
@@ -37,10 +40,10 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-end">
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link to={`/login`} className="nav-link">
                   <i className="fa-solid fa-right-to-bracket mx-1"></i>
                   Login
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

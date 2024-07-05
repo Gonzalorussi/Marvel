@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
 import { LandingPage } from "./pages/Landingpage"
+import {Login} from "./pages/Login"
 import {CharacterInfo} from "./pages/CharacterInfo"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -17,10 +18,11 @@ function App() {
         <Header/>
 
         <Routes>
-          <Route path="/" element ={<LandingPage/>}/>
-          <Route path="/conocenos" element ="Renderizar page conocenos"/>
-          <Route path="/characters" element ="Renderizar componente CharactersGrid"/>
-          <Route path="/character/:characterid" element={<CharacterInfo/>}/>
+          <Route path="/" element = {<LandingPage/>}/>
+          <Route path="/conocenos" element = "Renderizar page conocenos"/>
+          <Route path="/characters" element = "Renderizar componente CharactersGrid"/>
+          <Route path="/character/:characterid" element = {<CharacterInfo/>}/>
+          <Route path="/login" element = {<Login/>}/>
         </Routes>
 
         <Footer/>

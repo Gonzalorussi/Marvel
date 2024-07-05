@@ -5,12 +5,11 @@ import { useState,useEffect } from "react"
 export const CharactersGrid=()=>{
 
 
-    const[characters, setCharacters]=useState([])
+    const [characters, setCharacters] = useState([])
     
 
     useEffect(()=>{
-        getUrl("/v1/public/characters").then((data)=>{
-            
+        getUrl("/v1/public/characters").then((data) => {
             setCharacters(data.data.results)
         })
     },[])
