@@ -5,15 +5,15 @@ function LoginForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState({
-    email : {estado: false, message: ''},
-    password : {estado: false, message: ''},
+    email   : {estado: false, message: ''},
+    password: {estado: false, message: ''},
   })
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
     const newErrors = {
-      email: { estado: false, message: '' },
+      email   : { estado: false, message: '' },
       password: { estado: false, message: '' },
     }
 
