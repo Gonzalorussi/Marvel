@@ -1,10 +1,10 @@
-import {useState} from "react"
-import {Link} from "react-router-dom"
+import {useState, useEffect} from "react"
+import {useParams, useNavigate, Link} from "react-router-dom"
 import TextInput from "./TextInput.jsx"
-import {collection, addDoc} from "firebase/firestore"
+import {getDoc, doc, updateDoc} from "firebase/firestore"
 import {db} from "../utils/FirebaseConfig.js"
 
-function RegisterForm() {
+function EditUserForm() {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName]   = useState('')
   const [email, setEmail]         = useState('')
@@ -17,6 +17,7 @@ function RegisterForm() {
     password : {estado: false, message: ''},
     confirm  : {estado: false, message: ''},
   })
+  const navigate                  = useNavigate();
 
   const regEx = {
     alpha  : /^[a-zA-Z áéíóúñÑâêîôû]*$/,
@@ -24,16 +25,32 @@ function RegisterForm() {
     email  : /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/,
   };
 
-  const usersCollection = collection(db, 'users')
+  const { userId } = useParams();
 
-  const addUser = async(e)=>{
-    await addDoc(usersCollection, {
+  const updateUser = async (e) => {
+    const userDoc = doc(db, "users", userId);
+    const data = {
       firstName: firstName,
-      lastName : lastName,
-      email    : email,
-      password : password
-    })
+      lastName: lastName,
+      email: email,
+      password: password,
+    };
+    await updateDoc(userDoc, data);
   };
+
+  useEffect(() => {
+    const getUser = async (userId) => {
+      const userDoc = await getDoc(doc(db, "users", userId));
+      if (userDoc.exists()) {
+        setFirstName(userDoc.data().firstName);
+        setLastName(userDoc.data().lastName);
+        setEmail(userDoc.data().email);
+      } else {
+        console.error("El usuario no existe");
+      }
+    };
+    getUser(userId)
+  },[])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -64,12 +81,8 @@ function RegisterForm() {
     setErrors(newErrors)
 
     if (!newErrors.firstName.estado && !newErrors.lastName.estado && !newErrors.email.estado && !newErrors.password.estado) {
-      addUser()
-      setFirstName('')
-      setLastName('')
-      setEmail('')
-      setPassword('')
-      setConfirm('')
+      updateUser()
+      navigate("/show-users");
     }
   }
 
@@ -78,7 +91,7 @@ function RegisterForm() {
       <div className="container-md d-flex my-5 p-5 justify-content-center">
         <form id="frmSignUp" className="card p-3 shadow opacity-50" onSubmit = {handleSubmit}>
 
-          <h4>Registro de Usuarios</h4>
+          <h4>Actualización de Usuarios</h4>
 
           <hr className="border-danger border-2" />
 
@@ -163,4 +176,4 @@ function RegisterForm() {
   )
 }
 
-export default RegisterForm
+export default EditUserForm
