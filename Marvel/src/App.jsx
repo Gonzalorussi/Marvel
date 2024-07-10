@@ -4,6 +4,7 @@ import { LandingPage } from "./pages/Landingpage"
 import {CharactersCard} from "./components/CharactersCard"
 import {CharacterInfo} from "./pages/CharacterInfo"
 import {Login} from "./pages/Login"
+import { About } from "./pages/about";
 import Footer from "./components/Footer"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
@@ -17,10 +18,10 @@ function App() {
           <img style={{width: '100%'}} className="img-fluid" src="./src/assets/images/banner.png" alt="" />
         </section>
         <Header/>
-        
 
         <Routes>
           <Route path="/" element = {<LandingPage/>}/>
+          <Route path="/conocenos" element={<About />} />
           <Route path="/characters" element = {<CharactersCard/>}/>
           <Route path="/characters/:characterId" element = {<CharacterInfo/>}/>
           <Route path="/login" element = {<Login/>}/>
