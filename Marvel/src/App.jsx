@@ -5,8 +5,8 @@ import {CharactersCard} from "./components/CharactersCard"
 import {CharacterInfo} from "./pages/CharacterInfo"
 import {Login} from "./pages/Login"
 import Footer from "./components/Footer"
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
 import * as bootstrap from 'bootstrap'
 function App() {
   

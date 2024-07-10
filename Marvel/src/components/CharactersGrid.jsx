@@ -1,6 +1,6 @@
-import {CharactersCard} from "./CharactersCard"
-import {getUrl} from "../utils/APIconnection"
-import { useState,useEffect } from "react"
+import { CharactersCard } from "./CharactersCard";
+import { getUrl } from "../utils/APIconnection";
+import { useState, useEffect } from "react";
 
 export const CharactersGrid=()=>{
 
