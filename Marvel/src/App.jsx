@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { LandingPage } from "./pages/Landingpage";
 import { CharacterInfo } from "./pages/CharacterInfo";
+import { About } from "./pages/about";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
+import "./App.css";
 import * as bootstrap from "bootstrap";
+
 function App() {
   return (
     <>
