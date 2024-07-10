@@ -9,7 +9,7 @@ export const CharactersGrid=()=>{
     
 
     useEffect(()=>{
-        getUrl("/v1/public/characters").then((data) => {
+        getUrl("/characters").then((data) => {
             setCharacters(data.data.results)
         })
     },[])
@@ -17,9 +17,9 @@ export const CharactersGrid=()=>{
         <div className="container-fluid my-3">
             <div className="row d-flex justify-content-center">
                 {characters.map((character)=>(
-                    <CharactersCard key={character.etag} charactersMap={character}/>
+                    <CharactersCard key={character.id} charactersMap={character}/>
                 ))}
             </div>
-        </div>
-    )
+        </div>)
+    
 }

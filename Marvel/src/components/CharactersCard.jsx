@@ -9,7 +9,7 @@ export const CharactersCard = ({charactersMap})=>{
     return(
         <>
             <div className="col mb-3">
-                <Link to={`/character/${charactersMap.id}`} className="my-efect-card card text-bg-dark mx-auto border-light" style={{width: '18rem'}}>
+                <Link to={`/characters/${charactersMap.id}`} className="my-efect-card card text-bg-dark mx-auto border-light" style={{width: '18rem'}}>
                     <img src={imgUrl} className="card-img" alt={charactersMap.name}/>
                     <div className="card-img-overlay">
                         <h5 className="card-title text-light text-shadow">{charactersMap.name}</h5>
